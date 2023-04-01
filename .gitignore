@@ -1,0 +1,6 @@
+.idea/
+.vscode/
+hello.dSYM/
+cmake-build-debug/
+a.out
+hello
