@@ -9,7 +9,7 @@
  * clang-format -style=Microsoft -dump-config > .clang-format
  */
 
-void readLine(char *buffer)
+void leggiRiga(char *buffer)
 {
     if (NULL == buffer || NULL == fgets(buffer, BUFSIZ, stdin))
         return;
@@ -20,21 +20,21 @@ void readLine(char *buffer)
         *p = '\0';
 }
 
-int readNumber(char *prompt)
+int leggiNumero(char *prompt)
 {
-    int number = 0;
+    int numero = 0;
     for (;;)
     {
         printf("%s", prompt);
-        char line[BUFSIZ] = {'\0'};
-        readLine(line);
-        if ('\0' == line[0] || 0 == sscanf(line, "%d", &number))
+        char riga[BUFSIZ] = {'\0'};
+        leggiRiga(riga);
+        if ('\0' == riga[0] || 0 == sscanf(riga, "%d", &numero))
         {
-            printf("Your input is wrong\n");
+            printf("Immissione errata\n");
         }
         else
         {
-            return number;
+            return numero;
         }
     }
 }
@@ -52,28 +52,28 @@ int main(int argc, char const *argv[])
     int number = 0;
     while (-1 != number)
     {
-        number = readNumber("Insert number (enter -1 to end): ");
-        printf("Your number is %d\n", number);
+        number = leggiNumero("Inserici numero (immetti -1 per terminare): ");
+        printf("Hai inserito %d\n", number);
     }
 
     while (1)
     {
-        printf("Insert a line (enter quit to end):\n");
-        char line[BUFSIZ] = {'\0'};
-        readLine(line);
-        if (0 == strcmp("quit", line))
+        printf("Inserisci una riga (immetti quit per finire):\n");
+        char riga[BUFSIZ] = {'\0'};
+        leggiRiga(riga);
+        if (0 == strcmp("quit", riga))
         {
             break;
         }
-        printf("Your line is:\n");
-        printf("%s\n", line);
+        printf("La tua riga è:\n");
+        printf("%s\n", riga);
     }
 
     // -- Menu skeleton - Numeric input
     int exit = 0;
     while (!exit)
     {
-        switch (readNumber("Insert an option or -1 to exit: "))
+        switch (leggiNumero("Insert an option or -1 to exit: "))
         {
         case OPTION_1:
             printf("Handling option 1\n");
@@ -101,7 +101,7 @@ int main(int argc, char const *argv[])
     {
         printf("Enter an option or q to quit: ");
         char choice[BUFSIZ] = {'\0'};
-        readLine(choice);
+        leggiRiga(choice);
         switch (choice[0])
         {
         case OPTION_A:
