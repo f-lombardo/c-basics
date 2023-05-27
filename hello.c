@@ -73,23 +73,23 @@ int main(int argc, char const *argv[])
     int exit = 0;
     while (!exit)
     {
-        switch (leggiNumero("Insert an option or -1 to exit: "))
+        switch (leggiNumero("Inserisci un'opzione o -1 per terminare: "))
         {
         case OPTION_1:
-            printf("Handling option 1\n");
+            printf("Gestione dell'opzione 1\n");
             break;
         case OPTION_2:
-            printf("Handling option 2\n");
+            printf("Gestione dell'opzione 2\n");
             break;
         case OPTION_3:
-            printf("Handling option 3\n");
+            printf("Gestione dell'opzione 3\n");
             break;
         case -1:
-            printf("Quitting\n");
+            printf("Fine\n");
             exit = 1;
             break;
         default:
-            printf("Wrong choice\n");
+            printf("Scelta errata\n");
             break;
         }
     }
@@ -99,26 +99,26 @@ int main(int argc, char const *argv[])
     exit = 0;
     while (!exit)
     {
-        printf("Enter an option or q to quit: ");
-        char choice[BUFSIZ] = {'\0'};
-        leggiRiga(choice);
-        switch (choice[0])
+        printf("Inserisci un'opzione oppure q per uscire: ");
+        char scelta[BUFSIZ] = {'\0'};
+        leggiRiga(scelta);
+        switch (scelta[0])
         {
         case OPTION_A:
-            printf("Handling option A\n");
+            printf("Gestione dell'opzione A\n");
             break;
         case OPTION_B:
-            printf("Handling option B\n");
+            printf("Gestione dell'opzione B\n");
             break;
         case OPTION_C:
-            printf("Handling option C\n");
+            printf("Gestione dell'opzione C\n");
             break;
         case 'q':
-            printf("Quitting\n");
+            printf("Uscita\n");
             exit = 1;
             break;
         default:
-            printf("Wrong choice\n");
+            printf("Scelta errata\n");
             break;
         }
     }
