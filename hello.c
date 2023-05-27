@@ -4,6 +4,9 @@
 /*
  * This file has been formatted with
  * clang-format -i hello.c --style=Microsoft
+ *
+ * To create a format config file:
+ * clang-format -style=Microsoft -dump-config > .clang-format
  */
 
 void readLine(char *buffer)
