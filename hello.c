@@ -47,6 +47,18 @@ int readNumber(char *prompt)
 #define OPTION_B 'B'
 #define OPTION_C 'C'
 
+void show(int r, int c, int m[][c])
+{
+    for (int i = 0; i < r; ++i)
+    {
+        for (int j = 0; j < c; ++j)
+        {
+            printf("* %2d *", m[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     int number = 0;
@@ -123,6 +135,20 @@ int main(int argc, char const *argv[])
         }
     }
     // --
+
+    // -- Passing a dynamic size multidimensional array to a function
+
+    int r = 2;
+    int c = 3;
+    int m[2][3];
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++) {
+            m[i][j] = i + j;
+        }
+    }
+
+    show(r, c, m);
 
     return 0;
 }
