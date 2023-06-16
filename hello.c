@@ -140,7 +140,7 @@ int main(int argc, char const *argv[])
 
     int r = 2;
     int c = 3;
-    int m[2][3];
+    int m[r][c];
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++) {
